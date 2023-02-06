@@ -1,9 +1,18 @@
-import "./topbar.scss"
+import "./topbar.scss";
 
-export default function Topbar({menuOpen, setMenuOpen}) {
+export default function Topbar({ menuOpen, setMenuOpen }) {
   return (
-    <div>
+    <div className={"topbar " + (menuOpen && "active")}>
+      <div className="left">
         
+      </div>
+      <div className="right">
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <span className="line1"></span>
+          <span className="line2"></span>
+          <span className="line3"></span>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
