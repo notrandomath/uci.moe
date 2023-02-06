@@ -1,5 +1,7 @@
 import Topbar from "./components/topbar/Topbar.js";
 import Menu from "./components/menu/Menu.js";
+import Home from "./pages/home/Home.js";
+import About from "./pages/about/About.js";
 import "./app.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
@@ -14,8 +16,8 @@ function App() {
       <div className="content">
         <Router>
           <Routes>
-            <Route path="/" exact element={<div></div>} />
-            <Route path="/about" exact element={<div></div>} />
+            <Route path="/" exact element={<Home/>} />
+            <Route path="/about" exact element={<About/>} />
           </Routes>
         </Router>
       </div>
