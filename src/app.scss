@@ -1,0 +1,18 @@
+@import "./global.scss";
+
+$topBarHeight: 100px;
+
+.app{
+    height: 100vh;
+    .topbar{
+        height: $topBarHeight;
+        background-color: $midLightcolor;
+    }
+    .content{
+        position: relative;
+        width: 100%;
+        height: calc(100vh - #{$topBarHeight});
+        background-color: lightblue;
+        background-image: url("../public/assets/background.png");
+    }
+}
