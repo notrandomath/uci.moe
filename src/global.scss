@@ -3,3 +3,11 @@ $midDarkColor: #447FC7;
 $midColor: #689EE8;
 $midLightcolor: #8BBEFF;
 $lightColor: #AEDFFF;
+
+$mobileWidth: 768px;
+
+@mixin mobile {
+    @media (max-width: #{$mobileWidth}){
+        @content
+    }
+}

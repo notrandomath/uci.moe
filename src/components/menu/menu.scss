@@ -1,0 +1,31 @@
+@import "../../global.scss";
+
+.menu {
+  width: 135px;
+  height: 100%;
+  position: fixed;
+  right: -135px;
+  z-index: 2;
+
+  background-color: $midLightcolor;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 2s ease;
+
+  // if it's mobile make it take the entire screen and go from the top instead of the right
+  @include mobile {
+    width: 100%;
+    right: 0px;
+    top: -800px;
+  }
+
+  // if menu is open make it darker and remove the right/top margin so it comes into view
+  &.active {
+    background-color: $darkColor;
+    right: 0;
+    top: 0;
+  }
+}

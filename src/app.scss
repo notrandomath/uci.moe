@@ -4,10 +4,6 @@ $topBarHeight: 100px;
 
 .app{
     height: 100vh;
-    .top{
-        height: $topBarHeight;
-        background-color: $midLightcolor;
-    }
     .content{
         position: relative;
         width: 100%;
