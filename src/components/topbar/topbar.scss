@@ -81,11 +81,6 @@
       align-self: center;
       align-items: center;
 
-      @include mobile {
-        // moves the x to the center when on mobile
-        transform: translateX(calc(-50vw + 60px));
-      }
-
       .hamburger {
         span {
           background-color: white;
