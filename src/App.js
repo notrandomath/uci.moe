@@ -1,6 +1,7 @@
 import Topbar from "./components/topbar/Topbar.js";
 import Menu from "./components/menu/Menu.js";
 import "./app.scss";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
@@ -10,7 +11,14 @@ function App() {
     <div className="app">
       <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <div className="content"></div>
+      <div className="content">
+        <Router>
+          <Routes>
+            <Route path="/" exact element={<div></div>} />
+            <Route path="/about" exact element={<div></div>} />
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 }
