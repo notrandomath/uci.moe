@@ -1,13 +1,13 @@
-$darkColor: #1462A6;
-$midDarkColor: #447FC7;
-$midColor: #689EE8;
-$midLightcolor: #8BBEFF;
-$lightColor: #AEDFFF;
+$darkColor: #1462a6;
+$midDarkColor: #447fc7;
+$midColor: #689ee8;
+$midLightcolor: #8bbeff;
+$lightColor: #aedfff;
 
 $mobileWidth: 768px;
 
 @mixin mobile {
-    @media (max-width: #{$mobileWidth}){
-        @content
-    }
+  @media (max-width: #{$mobileWidth}) {
+    @content;
+  }
 }

@@ -2,13 +2,16 @@
 
 $topBarHeight: 100px;
 
-.app{
-    height: 100vh;
-    .content{
-        position: relative;
-        width: 100%;
-        height: calc(100vh - #{$topBarHeight});
-        background-color: lightblue;
-        background-image: url("../public/assets/background.png");
-    }
+.app {
+  height: 100vh;
+
+  // I configure topbar height in topbar.scss
+
+  .content {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - #{$topBarHeight});
+    background-color: lightblue;
+    background-image: url("../public/assets/background.png");
+  }
 }
