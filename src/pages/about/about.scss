@@ -1,0 +1,8 @@
+@import "../../global.scss";
+
+.about{
+    @include themify($themes) {
+        color: themed(textColor);
+        transition: all 2s ease;
+    }
+}

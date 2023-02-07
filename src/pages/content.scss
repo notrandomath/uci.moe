@@ -1,0 +1,16 @@
+@import "../global.scss";
+
+.content {
+    @include themify($themes) {
+        .background{
+            background-color: themed(backgroundOpacity);
+            opacity: 100%;
+            transition: all 2s ease;
+            height: 100%; 
+        }
+        position: relative;
+        width: 100%;
+        height: calc(100vh - #{$topBarHeight} - #{$footerHeight});
+        background-image: url("../../public/assets/background.png"); 
+    }
+}

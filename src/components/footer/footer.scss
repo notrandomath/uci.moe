@@ -1,0 +1,37 @@
+@import "../../global.scss";
+
+.footer {
+  @include themify($themes) {
+    height: $footerHeight;
+    width: 100%;
+    transition: all 2s ease;
+
+    background-color: themed(midLightColor);
+
+    display: flex;
+    flex-direction: row;
+    // relative position in order for z-index to work
+    position: relative;
+    // makes the footer in front of everything else
+    z-index: 3;
+    color: themed(textColor);
+
+    .left {
+      flex: 1;
+    }
+    .right {
+      margin-right: 25px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      span {
+        margin-right: 10px;
+      }
+    }
+    &.active {
+      background-color: themed(darkColor);
+      transition: all 2s ease;
+      color: white;
+    }
+  }
+}
