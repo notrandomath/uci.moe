@@ -1,14 +1,14 @@
 import "./footer.scss";
 import "../../global.scss";
 import Toggle from "react-toggle";
-import "react-toggle/style.css";
+import "../toggleButton/toggleButton.scss";
 
 export default function Footer({menuOpen, darkMode, setDarkMode}) {
   return (
     <div className={"footer " + (menuOpen && "active")}>
       <div className="left"></div>
       <div className="right">
-        <span>Darkmode</span>
+        <span>{darkMode ? "Darkmode ON" : "Darkmode OFF"}</span>
         <Toggle
           className="toggle"
           icons={false}
