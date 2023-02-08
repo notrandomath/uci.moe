@@ -6,12 +6,13 @@
     width: 100%;
     transition: all 2s ease;
 
-    background-color: themed(midLightColor);
+    position: fixed;
+    margin-bottom: 10px;
+    bottom: 0px;
 
     display: flex;
     flex-direction: row;
-    // relative position in order for z-index to work
-    position: relative;
+
     // makes the footer in front of everything else
     z-index: 3;
     color: themed(textColor);

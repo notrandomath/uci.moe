@@ -4,8 +4,8 @@
   @include themify($themes) {
     height: $topBarHeight;
     width: 100%;
-    // relative position in order for z-index to work
-    position: relative;
+    position: fixed;
+    top: 0;
     // makes the topbar in front of everything else
     z-index: 3;
 
