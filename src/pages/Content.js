@@ -10,8 +10,8 @@ export default function Content() {
       <div className='background'>
           <Router>
             <Routes>
-              <Route path="/" exact element={<Home />} />
-              <Route path="/about" exact element={<About />} />
+              <Route path="/uci.moe" exact element={<Home />} />
+              <Route path="/uci.moe/about" exact element={<About />} />
             </Routes>
           </Router>
       </div>

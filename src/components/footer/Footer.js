@@ -1,7 +1,7 @@
 import "./footer.scss";
 import "../../global.scss";
-import Toggle from "react-toggle";
-import "../toggleButton/toggleButton.scss";
+import { IconButton } from "@mui/material";
+import {LightMode, DarkMode} from "@mui/icons-material";
 
 export default function Footer({menuOpen, darkMode, setDarkMode}) {
   return (
@@ -9,13 +9,12 @@ export default function Footer({menuOpen, darkMode, setDarkMode}) {
       <div className="left"></div>
       <div className="right">
         <span>{darkMode ? "Darkmode ON" : "Darkmode OFF"}</span>
-        <Toggle
+        <IconButton
           className="toggle"
-          icons={false}
-          defaultChecked={darkMode}
-          onChange={() => {setDarkMode(!darkMode)}}
-          //TODO: make state save so that you don't have to keep untoggling or toggling from default
-        />
+          onClick={() => {setDarkMode(!darkMode)}}
+        >
+          {darkMode ? <DarkMode fontSize="inherit"/> : <LightMode fontSize="inherit"/>}
+        </IconButton>
       </div>
     </div>
   );

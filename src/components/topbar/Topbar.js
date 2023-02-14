@@ -5,8 +5,8 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
     // if the topbar is open it would be called "topbar active" which we use in the CSS
     <div className={"topbar " + (menuOpen && "active")}>
       <div className="left">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
+        <a href="/uci.moe">Home</a>
+        <a href="/uci.moe/about">About</a>
       </div>
       <div className="right">
         {/* when you click the hamburger it changes menuOpen from true to false and vice versa */}
