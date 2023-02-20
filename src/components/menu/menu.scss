@@ -1,0 +1,37 @@
+@import "../../global.scss";
+
+$width: 135px; // I had to finick with this to make it approximately the size of the hamburger bar and symmetric margins
+
+.menu {
+  @include themify($themes) {
+    width: $width;
+    height: 100%;
+    position: fixed;
+    //makes it come from the right by the width
+    right: -$width;
+    z-index: 2;
+
+    background-color: themed(midLightcolor);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: all 2s ease;
+
+    // if it's mobile make it take the entire screen and go from the top instead of the right
+    @include mobile {
+      width: 100%;
+      right: 0px;
+      top: -800px;
+    }
+
+    // if menu is open ("menu active") make it darker and remove the right/top margin so it comes into view
+    &.active {
+      background-color: themed(darkColor);
+      right: 0;
+      top: 0;
+    }
+  }
+}

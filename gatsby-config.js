@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `uci.moe`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://anime-club.yahia.space`
   },
   plugins: ["gatsby-plugin-sass"]
 };

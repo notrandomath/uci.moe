@@ -1,0 +1,19 @@
+@import "../../global.scss";
+
+.content {
+    @include themify($themes) {
+        top: $topBarHeight;
+        position: relative;
+
+        .background{
+            background-color: themed(backgroundOpacity);
+            opacity: 100%;
+            transition: all 2s ease;
+            height: 100%; 
+        }
+        
+        width: 100%;
+        height: calc(100vh);
+        background-image: url("../../images/background.png"); 
+    }
+}
