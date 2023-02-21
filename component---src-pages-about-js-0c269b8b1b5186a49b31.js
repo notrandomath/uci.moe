@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkuci_moe=self.webpackChunkuci_moe||[]).push([[682],{5465:function(e,t,u){u.r(t),u.d(t,{Head:function(){return a}});var l=u(7294),n=u(3592);t.default=()=>l.createElement(n.Z,null,l.createElement("div",{className:"about"},l.createElement("p",null,"About")));const a=()=>l.createElement("title",null,"About Page")}}]);
+//# sourceMappingURL=component---src-pages-about-js-0c269b8b1b5186a49b31.js.map

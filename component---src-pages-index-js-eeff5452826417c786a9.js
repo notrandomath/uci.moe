@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkuci_moe=self.webpackChunkuci_moe||[]).push([[678],{6558:function(e,t,n){n.r(t),n.d(t,{Head:function(){return l}});var a=n(7294),c=n(3592);t.default=()=>a.createElement("div",{className:"app"},a.createElement(c.Z,null,"Home"));const l=()=>a.createElement("title",null,"Home Page")}}]);
+//# sourceMappingURL=component---src-pages-index-js-eeff5452826417c786a9.js.map
