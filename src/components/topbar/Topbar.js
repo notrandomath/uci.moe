@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import "./topbar.scss";
 
 export default function Topbar({ menuOpen, setMenuOpen }) {
@@ -6,8 +7,8 @@ export default function Topbar({ menuOpen, setMenuOpen }) {
     // if the topbar is open it would be called "topbar active" which we use in the CSS
     <div className={"topbar " + (menuOpen && "active")}>
       <div className="left">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
       </div>
       <div className="right">
         {/* when you click the hamburger it changes menuOpen from true to false and vice versa */}
