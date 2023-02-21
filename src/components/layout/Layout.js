@@ -8,39 +8,56 @@ export default function Layout({ children }) {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [footerShown, setFooterShown] = React.useState(false);
 
-  // fetches darkmode from storage if it exists otherwise it's null
-  const storedDarkmode = localStorage.getItem('darkmode');
+  // figures the default value for darkmode when it's being client rendered
+  function getDefault() {
+    const storedDarkmode = localStorage.getItem("darkmode");
+    return storedDarkmode != null
+      ? storedDarkmode === "true"
+      : // checks if darkmode is enabled on browser for default state
+        window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+
+  // https://github.com/dance2die/react-use-localstorage/issues/24 - makes sure it's not being server rendered
+  const useSSRLocalStorage = (initial) =>
+    typeof window !== "undefined"
+      ? getDefault()
+      : [initial]; // eslint-disable-line react-hooks/rules-of-hooks
 
   const [darkMode, setDarkMode] = React.useState(
-   storedDarkmode != null ? storedDarkmode==="true" :
-    // checks if darkmode is enabled on browser for default state
-    window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+    useSSRLocalStorage(false)
   );
 
   // keeps darkmode persistent
   React.useEffect(() => {
-    localStorage.setItem('darkmode', darkMode);
+    localStorage.setItem("darkmode", darkMode);
   }, [darkMode]);
 
   //only shows footer on scroll
   React.useEffect(() => {
-    const handleScroll = event => {
+    const handleScroll = (event) => {
       setFooterShown(window.scrollY !== 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <div className={`theme-${darkMode ? "dark" : "light"}`}>
-        <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Content children={children}/>
-        {footerShown && <Footer menuOpen={menuOpen} darkMode={darkMode} setDarkMode={setDarkMode} />}
+      <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Content children={children} />
+      {footerShown && (
+        <Footer
+          menuOpen={menuOpen}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
+      )}
     </div>
-  )
+  );
 }
