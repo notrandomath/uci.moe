@@ -2,7 +2,7 @@
 
 .content {
     @include themify($themes) {
-        top: $topBarHeight;
+        top: calc($topBarHeight);
         position: relative;
 
         .background{

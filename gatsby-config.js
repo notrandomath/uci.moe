@@ -3,11 +3,11 @@
  */
 module.exports = {
   flags: {
-    DEV_SSR: true
+    DEV_SSR: true,
   },
   siteMetadata: {
     title: `uci.moe`,
-    siteUrl: `https://anime-club.yahia.space`
+    siteUrl: `https://anime-club.yahia.space`,
   },
-  plugins: ["gatsby-plugin-sass"]
+  plugins: ["gatsby-plugin-sass"],
 };

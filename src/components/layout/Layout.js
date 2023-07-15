@@ -1,4 +1,5 @@
 import * as React from "react";
+import { globalHistory } from '@reach/router'
 import Topbar from "../topbar/topbar";
 import Footer from "../footer/Footer";
 import Content from "../content/Content.js";
@@ -45,6 +46,13 @@ export default function Layout({ children }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  //hides footer on page change
+  React.useEffect(() => {
+    return globalHistory.listen(({ action }) => {
+      if (action === 'PUSH') setFooterShown(false)
+    })
+  }, [setFooterShown])
 
   return (
     <div className={`theme-${darkMode ? "dark" : "light"}`}>
